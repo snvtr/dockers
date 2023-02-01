@@ -11,8 +11,10 @@ LOGR_HOST = os.environ.get('LOGR_HOST') or 'localhost'
 @app.route('/')
 def index():
     x = Greetings.query.get(randrange(1,10))
-    logr('DB', 'INFO', 'got response: '+','.join([str(x.id), x.adj, x.noun]))    
-    return Response(','.join([str(x.id), x.adj, x.noun]), mimetype='text/plain')
+    y = Greetings.query.get(randrange(1,10))
+    z = Greetings.query.get(randrange(1,10))
+    logr('DB', 'INFO', 'got response: '+','.join([str(x.id), y.adj, z.noun]))
+    return Response(','.join([str(x.id), y.adj, z.noun]), mimetype='text/plain')
 
 def logr(host, level, msg):
         req_str = (''.join(['http://',LOGR_HOST,':5002',
