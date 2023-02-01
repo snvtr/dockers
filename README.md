@@ -1,2 +1,2 @@
 # dockers
-4 primitiva docker containers with cross-connections between each other
+4 primitive docker containers with cross-connections between each other
