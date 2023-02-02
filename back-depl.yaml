@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-deployment
+  labels:
+    app: back
+spec:
+  selector:
+    matchLabels:
+      run: back-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: back-service
+    spec:
+      containers:
+        - name: back
+          image: back
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5001
+              protocol: TCP

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logr-deployment
+  labels:
+    app: logr
+spec:
+  selector:
+    matchLabels:
+      run: logr-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: logr-service
+    spec:
+      containers:
+        - name: logr
+          image: logr
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5002
+              protocol: TCP

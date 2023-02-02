@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-deployment
+  labels:
+    app: front
+spec:
+  selector:
+    matchLabels:
+      run: front-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: front-service
+    spec:
+      containers:
+        - name: front
+          image: front
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+              protocol: TCP
