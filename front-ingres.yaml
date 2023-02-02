@@ -13,3 +13,10 @@ spec:
             name: front-service
             port:
               number: 5000
+      - path: /show
+        pathType: Prefix
+        backend:
+          service:
+            name: logr-service
+            port:
+              number: 5002
