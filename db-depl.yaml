@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: db
-          image: db
+          image: db:local
           imagePullPolicy: Never
           ports:
             - containerPort: 7000

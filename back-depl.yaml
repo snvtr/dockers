@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: back
-          image: back
+          image: back:local
           imagePullPolicy: Never
           ports:
             - containerPort: 5001

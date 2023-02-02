@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: front
-          image: front
+          image: front:local
           imagePullPolicy: Never
           ports:
             - containerPort: 5000

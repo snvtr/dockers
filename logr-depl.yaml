@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: logr
-          image: logr
+          image: logr:local
           imagePullPolicy: Never
           ports:
             - containerPort: 5002
