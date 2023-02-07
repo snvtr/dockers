@@ -4,7 +4,7 @@ import json
 import os
 from flask import Response, request
 
-LOGR_HOST = os.environ.get('LOGR_HOST') or 'localhost'
+#LOGR_HOST = os.environ.get('LOGR_HOST') or 'localhost'
 
 @app.route('/add')
 def add():
