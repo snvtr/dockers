@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: front-ingress
+spec:
+  tls:
+  - hosts:
+      - localhost 
+    secretName: testsecret-tls
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: front-service
+            port:
+              number: 5000
+      - path: /show
+        pathType: Prefix
+        backend:
+          service:
+            name: logr-service
+            port:
+              number: 5002

@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: front
-          image: front
-          imagePullPolicy: Never
+          image: localhost:32000/front:registry
+          #imagePullPolicy: Never
           ports:
             - containerPort: 5000
               protocol: TCP

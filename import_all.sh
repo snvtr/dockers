@@ -1,7 +1,7 @@
 #!/bin/bash
 
-microk8s ctr image import front.tar
-microk8s ctr image import back.tar
-microk8s ctr image import logr.tar
-microk8s ctr image import db.tar
+microk8s ctr image import front.tar && rm front.tar
+microk8s ctr image import back.tar  && rm back.tar
+microk8s ctr image import logr.tar  && rm logr.tar
+microk8s ctr image import db.tar    && rm db.tar
 

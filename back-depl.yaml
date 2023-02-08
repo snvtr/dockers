@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: back
-          image: back
-          imagePullPolicy: Never
+          image: localhost:32000/back:registry
+          #imagePullPolicy: Never
           ports:
             - containerPort: 5001
               protocol: TCP

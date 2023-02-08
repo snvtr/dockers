@@ -16,8 +16,17 @@ spec:
     spec:
       containers:
         - name: logr
-          image: logr
-          imagePullPolicy: Never
+          image: localhost:32000/logr:registry
+          #imagePullPolicy: Never
           ports:
             - containerPort: 5002
               protocol: TCP
+          volumeMounts:
+            - name: test-pvc-ssd
+              mountPath: /var/log/logr
+      volumes:
+        - name: test-pvc-ssd
+          hostPath:
+            path: /mnt/disk0
+            type: Directory
+

@@ -1,8 +1,8 @@
 #!/bin/sh
 export FLASK_APP=back.py
 # for docker:
-#export LOGR_HOST=$(ip -br a | grep UP | awk '{print $3}' | sed -r 's/\/\w+//')
-#export DB_HOST=$(ip -br a | grep UP | awk '{print $3}' | sed -r 's/\/\w+//')
+#export LOGR_HOST="172.17.0.1"
+#export DB_HOST="172.17.0.1"
 # for k8s:
 export LOGR_HOST=logr-service
 export DB_HOST=db-service

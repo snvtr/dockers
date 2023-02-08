@@ -28,7 +28,7 @@ def add():
     else:
         return Response(response='no msg', status=500, mimetype='text/html')
 
-    with open('log', mode='at') as log_f:
+    with open('/var/log/logr/log', mode='at') as log_f:
         log_f.write('%s %-8s %-8s %s\n' % (moment, host, level, msg))
 
     return Response(response='Ok', status=200, mimetype='text/html')
@@ -36,7 +36,7 @@ def add():
 @app.route('/show')
 def show():
     ret_str = '<html><pre>'
-    with open('log', mode='rt') as log_f:
+    with open('/var/log/logr/log', mode='rt') as log_f:
         for line in log_f:
             ret_str += line
     ret_str += '</pre></html>'

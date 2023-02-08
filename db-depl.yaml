@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: db
-          image: db
-          imagePullPolicy: Never
+          image: localhost:32000/db:registry
+          #imagePullPolicy: Never
           ports:
             - containerPort: 7000
               protocol: TCP
